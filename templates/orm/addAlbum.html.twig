@@ -10,12 +10,14 @@
     <h3 class="addHeader">Add Album...</h3>
 
     <div class="row">
+        {% if artistId is defined %}
         <div class="col-md-6">
-            {% if artistId is defined %}
                 <a href="{{ path('artistAlbums', { 'artistId': artistId } )}}"><-- Artist Albumss</a>
-            {% endif %}
         </div>
-        <div class="col-md-6"><a href="#">Add Album --></a></div>
+        <div class="col-md-6">
+            {#<a href="#">Add Album --></a>#}
+        </div>
+        {% endif %}
     </div>
 
     {{ form(albumForm) }}
